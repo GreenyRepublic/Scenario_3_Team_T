@@ -17,7 +17,7 @@ public class Db
 	public ArrayList<Double> xPos = new ArrayList<Double>();
 	public ArrayList<Double> yPos = new ArrayList<Double>();
 	Connection connection = null;
-    String connectionURL = "jdbc:mysql://localhost:3306/test2";
+    String connectionURL = "jdbc:mysql://localhost:3306/test";
     ResultSet set = null;
     PreparedStatement pst = null;
     FileInputStream input;
@@ -33,7 +33,7 @@ public class Db
     	try
     	{
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			connection = DriverManager.getConnection(connectionURL, "root", "deanisanidiot");
+			connection = DriverManager.getConnection(connectionURL, "kebab", "remove");
 			Statement st = connection.createStatement();
 			String query = "CREATE TABLE " + projectName +
 	                   " (id INTEGER not NULL AUTO_INCREMENT, " +
