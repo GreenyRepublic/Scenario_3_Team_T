@@ -66,7 +66,7 @@ public class Db
     	try
     	{
     	    String query = "SELECT * FROM "+projectName;
-    	    connection = DriverManager.getConnection(connectionURL, "root", "deanisanidiot");
+    	    connection = DriverManager.getConnection(connectionURL, "kebab", "remove");
             pst = connection.prepareStatement(query);
             set = pst.executeQuery();
             int i=1;
@@ -99,7 +99,7 @@ public class Db
     {
     	try
     	{
-    		connection = DriverManager.getConnection(connectionURL, "root", "deanisanidiot");
+    		connection = DriverManager.getConnection(connectionURL, "kebab", "remove");
     	    Statement st = connection.createStatement();
     	    String query = "DROP TABLE "+projectName;
     	    st.executeUpdate(query);
@@ -115,7 +115,7 @@ public class Db
     	ArrayList<String> list = new ArrayList<String>();
     	try
     	{
-    	    connection = DriverManager.getConnection(connectionURL, "root", "deanisanidiot");
+    	    connection = DriverManager.getConnection(connectionURL, "kebab", "remove");
             DatabaseMetaData data = connection.getMetaData();
             set = data.getTables(null, null, "%", null);
             while (set.next())

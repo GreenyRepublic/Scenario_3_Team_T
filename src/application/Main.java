@@ -245,7 +245,7 @@ public class Main extends Application{
 	    Label label = new Label("Circuit components:");
 	    flow.getChildren().add(label);
 	    flow.setAlignment(Pos.CENTER_LEFT);
-		MovingClass mv = new MovingClass(layout1, theGrid);
+		MovingClass mv = new MovingClass(layout1, theGrid, scene1);
 
 	    ImageView pages[] = new ImageView[9];
 	    for (int i=1; i<9; i++) {

@@ -34,12 +34,13 @@ public class MovingClass {
 	BorderPane layout1;
 	GridPane grid;
 	ImageView theImage, theImg, theCompImg;
-	Scene scene;
+	Scene scene, scene1;
 	Components components = new Components();
 
-	public MovingClass(BorderPane layout1, GridPane grid){
+	public MovingClass(BorderPane layout1, GridPane grid, Scene scene1){
 		this.layout1 = layout1;
 		this.grid = grid;
+		this.scene1 = scene1;
 	}
 
 	public void moveOb(ImageView hold, int index){
@@ -192,9 +193,12 @@ public class MovingClass {
 		button1.setOnMouseDragged(new EventHandler<MouseEvent>() {
 			  @Override public void handle(MouseEvent mouseEvent) {
 				  System.out.println("mouse DRAGGED");
+				  if(((mouseEvent.getSceneX()) > 183.0) && ((mouseEvent.getSceneY()) > 34.0) && ((mouseEvent.getSceneY()) < (scene1.getHeight() - 70))
+						&& ((mouseEvent.getSceneX()) < (scene1.getWidth() -40))){ 
 			    button1.setLayoutX(mouseEvent.getSceneX() + dragDelta.x);
 			    button1.setLayoutY(mouseEvent.getSceneY() + dragDelta.y);
 			    System.out.println("dragging");
+				}
 			  }
 			});
 		button1.setOnMouseEntered(new EventHandler<MouseEvent>() {
